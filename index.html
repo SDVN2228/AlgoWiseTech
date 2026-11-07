@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AlgoWise Technologies | AI, Software and Digital Solutions</title>
+<meta name="description" content="AlgoWise Technologies is a Hyderabad-based software company delivering custom AI, machine learning, web and mobile solutions with transparent fixed pricing. Incubated at JNTUH TBI.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%221%22%20x2=%221%22%20y2=%220%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23a87a0a%22/%3E%3Cstop%20offset=%22.55%22%20stop-color=%22%23e0b83a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23f6dc7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20x=%221%22%20y=%221%22%20width=%2262%22%20height=%2262%22%20rx=%2214%22%20fill=%22%23ffffff%22%20stroke=%22%23e7d9a8%22%20stroke-width=%222%22/%3E%3Cpath%20transform=%22translate%2810.00%2019.17%29%20scale%280.0777%29%22%20fill=%22url%28%23g%29%22%20d=%22M181%20209%20L193%20238%20L205%20248%20L204%20235%20L196%20229%20L197%20222%20L193%20219%20L191%20207ZM168%20201%20L148%20203%20L117%20264%20L195%20263ZM307%20183%20L287%20230%20L320%20299%20L341%20262%20L343%20252%20L311%20184%20L312%20192ZM353%20115%20L323%20162%20L333%20186%20L330%20187%20L324%20175%20L315%20181%20L315%20186%20L341%20238%20L350%20230%20L343%20214%20L346%20213%20L402%20327%20L424%20289%20L429%20267%20L367%20136ZM115%2095%20L1%20325%20L52%20328%20L56%20324%20L141%20157%20L139%20139ZM158%209%20L131%2063%20L131%2069%20L254%20327%20L304%20327%20L300%20311%20L168%2023ZM565%205%20L510%205%20L418%20189%20L443%20245%20L452%20237%20L549%2039%20L560%2023Z%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fbfaf6">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf6;--surf:#fff;--ink:#17171c;--mute:#5d5b54;--gold:#b88b14;--goldt:#8a6609;--gold1:#f1cf62;--gold2:#d9a826;--line:#e7e1cf;--dk:#1a1a1f;--r:18px;--fd:'Sora','Trebuchet MS',sans-serif;--fb:'Manrope','Segoe UI',system-ui,sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:84px;height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--fb);overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header{position:fixed;top:0;left:0;right:0;z-index:30;padding:calc(env(safe-area-inset-top,0px) + 10px) 20px 10px;display:flex;align-items:center;justify-content:space-between;background:rgba(251,250,246,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:800 19px var(--fd)}
+.brand img{height:30px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:var(--mute);text-decoration:none;font-weight:700;font-size:14px;transition:color .2s}
+nav a:hover{color:var(--goldt)}
+nav a.cta{background:var(--dk);color:#fff;padding:9px 18px;border-radius:999px}
+nav a.cta:hover{color:var(--gold1)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 14px;font:700 14px var(--fb)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+main{position:relative;z-index:1}
+section{padding:88px 20px;max-width:1160px;margin:0 auto}
+.veil{background:rgba(251,250,246,.88);backdrop-filter:blur(4px)}
+h1,h2,h3{font-family:var(--fd);margin:0;line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(36px,6.4vw,70px);font-weight:800;max-width:13em}
+h2{font-size:clamp(28px,4.2vw,44px);font-weight:700;margin-bottom:14px;max-width:18em}
+h3{font-size:20px;font-weight:700}
+p{margin:0 0 14px;max-width:64ch}
+.lead{color:var(--mute);font-size:clamp(16px,2vw,19px);max-width:44em}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font:700 15px var(--fb);text-decoration:none;color:#1d1605;background:linear-gradient(135deg,var(--gold1),var(--gold2));box-shadow:0 8px 24px rgba(184,139,20,.25);border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.out{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14px;color:var(--mute);background:#fff}
+.glass{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 30px rgba(60,45,5,.06)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.stats div{padding:18px 20px}.stats b{display:block;font:800 26px var(--fd);color:var(--goldt)}.stats span{color:var(--mute);font-size:14px}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.why{display:grid;gap:12px}
+.why div{padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.why i{flex:none;width:10px;height:10px;margin-top:8px;background:var(--gold2);transform:rotate(45deg)}
+.why b{display:block}.why span{color:var(--mute);font-size:14.5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;perspective:1100px}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease-out,border-color .25s;will-change:transform}
+.tilt:hover{border-color:var(--gold2)}
+.svc{padding:26px}.svc h3{margin-bottom:8px}.svc p{color:var(--mute);font-size:15px;margin:0}
+.svc .ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--gold1),var(--gold2));display:grid;place-items:center;font:800 18px var(--fd);color:#1d1605;margin-bottom:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 20px;font:700 14px var(--fb);color:var(--mute);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--dk);color:#fff;border-color:var(--dk)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1100px}
+.tier{padding:26px;display:flex;flex-direction:column}
+.tier.reco{border:2px solid var(--gold2);box-shadow:0 18px 44px rgba(184,139,20,.18)}
+.badge{align-self:flex-start;font:700 12px var(--fb);padding:4px 12px;border-radius:999px;background:#f4ecd2;color:var(--goldt)}
+.reco .badge{background:var(--dk);color:var(--gold1)}
+.tier h3{margin:12px 0 4px;font-size:22px}.for{color:var(--mute);font-size:14px;margin-bottom:14px}
+.tier ul{list-style:none;padding:0;margin:0 0 18px;flex:1}
+.tier li{position:relative;padding:5px 0 5px 20px;font-size:14.5px}
+.tier li::before{content:"";position:absolute;left:3px;top:13px;width:7px;height:7px;background:var(--gold2);transform:rotate(45deg)}
+.pr{border-top:1px solid var(--line);padding-top:14px;margin-bottom:14px}
+.pr s{color:#8b887d;font-size:14px;display:block}.pr b{font:800 30px var(--fd);color:var(--ink)}.pr small{display:block;color:var(--mute);font-size:12.5px}
+.tm{color:var(--mute);font-size:13px;margin-bottom:12px}
+.extras{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ex{padding:16px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.ex span{color:var(--mute);font-size:14px;display:block}.ex em{font:700 17px var(--fd);font-style:normal;text-align:right;white-space:nowrap}.ex em s{display:block;color:#8b887d;font:400 12.5px var(--fb)}
+.bund{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.bund .glass{padding:24px}.bund b{font:800 28px var(--fd);display:block;margin:6px 0}
+.note{color:var(--mute);font-size:13.5px;margin-top:18px}
+.band{background:var(--dk);color:#fff;border-radius:26px;max-width:1120px;width:calc(100% - 40px);margin:0 auto;padding:46px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;position:relative;z-index:1}
+.band h2{color:#fff;margin:0 0 10px;font-size:clamp(26px,3.6vw,38px)}.band p{color:#cfcab9;margin:0}
+.band .big{font:800 clamp(48px,8vw,86px)/1 var(--fd);color:var(--gold1)}
+.ind{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.ind div{padding:22px}.ind h3{font-size:17px;margin-bottom:6px}.ind p{color:var(--mute);font-size:14px;margin:0 0 10px}.ind b{color:var(--goldt);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+.steps div{padding:22px;position:relative}.steps b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--dk);color:var(--gold1);font:700 14px var(--fd);margin-bottom:12px}
+.steps h3{font-size:17px}.steps p{color:var(--mute);font-size:14px;margin:6px 0 0}
+.ease{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.ease div{padding:22px}.ease h3{font-size:17px;margin-bottom:6px}.ease p{margin:0;color:var(--mute);font-size:14.5px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.person{padding:28px}.role{color:var(--goldt);font-weight:700;margin:4px 0 12px}.person p{color:var(--mute)}
+.faq{max-width:820px;margin-top:26px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 22px}
+summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--goldt);font-size:22px;line-height:1}details[open] summary::after{content:"\2212"}
+details p{color:var(--mute);padding-bottom:16px;margin:0}
+.cwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;margin-top:28px;align-items:start}
+.cinfo a{display:block;padding:18px 22px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700}
+.cinfo a:last-child{border:0}.cinfo small{display:block;color:var(--mute);font-weight:400;font-size:13px}
+.cinfo a:hover{color:var(--goldt)}
+form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-weight:700;font-size:13.5px;display:grid;gap:6px}
+input,select,textarea{font:400 16px var(--fb);padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fdfcf9;color:var(--ink);width:100%}
+.full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}
+#fmsg{grid-column:1/-1;font-size:14px;min-height:20px;margin:0;color:var(--goldt)}
+#fmsg.bad{color:#b3261e;background:#fdecea;border:1px solid #f3c1bc;border-radius:12px;padding:12px 16px}
+.f{display:grid;gap:6px;align-content:start}.f.full{grid-column:1/-1}
+.phr{display:grid;grid-template-columns:minmax(120px,.9fr) 2fr;gap:8px}
+.err{color:#b3261e;font-size:12.5px;font-weight:500;min-height:0}
+[aria-invalid=true]{border-color:#d4483f!important;background:#fff8f7!important}
+.opts{grid-column:1/-1;border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fdfcf9}
+.opts p{margin:0 0 10px;font-weight:700;font-size:14px}.opts div{display:flex;flex-wrap:wrap;gap:10px}
+.opts a,.opts button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font:700 13.5px var(--fb);text-decoration:none;cursor:pointer}
+.opts a:hover,.opts button:hover{border-color:var(--gold2);color:var(--goldt)}
+footer{position:relative;z-index:1;margin-top:90px;background:var(--dk);color:#bdb8a6;padding:44px 20px calc(34px + env(safe-area-inset-bottom,0px));font-size:13px;line-height:1.8}
+.fin{max-width:1160px;margin:0 auto}.ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #34343b}
+footer a{color:var(--gold1);text-decoration:none;margin-right:18px}footer p{margin:0 0 6px;max-width:none}
+@media(min-width:901px){
+ p,.lead,.for,.tier li,.why span,.ex span,details p,.pr small,.tm{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+ .tier li,.why span,.ex span{text-align:left}
+ .svc p,.ind p,.ease p,.steps p,.person p,.bund p,.band p,.note,.faq details p{max-width:none}
+ .band>div:last-child{text-align:center}
+ .band .btns{margin-top:22px}
+ .lead{max-width:none}
+ .hero .lead{max-width:32em;text-align:left}
+ h2{max-width:none}
+ .two{align-items:stretch}
+ .why{align-content:space-between}
+ .faq{max-width:none}
+ .cwrap{align-items:stretch}
+ .cinfo{display:flex;flex-direction:column}.cinfo a{flex:1;display:flex;flex-direction:column;justify-content:center}
+}
+@media(max-width:900px){
+ nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);display:none;padding:6px 20px 16px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}nav a{padding:13px 0;border-bottom:1px solid var(--line)}nav a.cta{text-align:center;margin-top:10px;border:0}.menu{display:block}
+ .two,.cwrap,.band,.team{grid-template-columns:1fr}
+ .grid,.tiers,.bund,.ease{grid-template-columns:1fr}.ind{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr}
+ section{padding:64px 20px}.band{padding:32px 24px;width:calc(100% - 32px)}.hero{justify-content:flex-end;padding-bottom:56px}
+ form{grid-template-columns:1fr;padding:22px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style></head><body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header>
+ <a class="brand" href="#top"><img alt="" src="data:image/png;base64,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">AlgoWise</a>
+ <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+ <nav id="nav"><a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="cta" href="#contact">Contact us</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+ <h1>Harnessing AI to solve real-world challenges and drive continuous innovation.</h1>
+ <p class="lead" style="margin-top:22px">AlgoWise Technologies designs and builds smarter, scalable and future-ready software: custom AI, websites, mobile apps and automation for businesses of every size, with transparent fixed pricing.</p>
+ <div class="btns"><a class="btn" href="#contact">Book a free consultation</a><a class="btn out" href="#pricing">View pricing</a></div>
+ <div class="chips"><span>Incubated at JNTUH TBI</span><span>Registered private limited company</span><span>Hyderabad, India</span><span>Serving clients anywhere</span></div>
+ <div class="stats"><div class="glass"><b>Fixed price</b><span>No hidden charges</span></div><div class="glass"><b>Weekly</b><span>Progress demos</span></div><div class="glass"><b>100%</b><span>Code and data ownership</span></div><div class="glass"><b>30 days</b><span>Free post-launch support</span></div></div>
+</section>
+
+<section id="about" class="veil">
+ <div class="two"><div>
+  <h2>Intelligent software, engineered for business.</h2>
+  <p class="lead">AlgoWise Technologies Private Limited is a Hyderabad-based software company that builds AI, machine learning and automation solutions for businesses. From internal workflow optimization to cross-platform digital products, we create intelligent systems designed for impact, performance and growth.</p>
+  <p class="lead">Incorporated in 2024 and incubated at the JNTUH Technology Business Incubator (JNTUH TBI), we work as a lean, focused team of domain experts in data science, programmatic automation and AI integration, turning complex operational challenges into reliable, scalable products.</p>
+ </div>
+ <div class="why">
+  <div class="glass"><i></i><p style="margin:0"><b>Right-sized solutions</b><span>Basic, Standard and Premium plans for small, medium and large businesses.</span></p></div>
+  <div class="glass"><i></i><p style="margin:0"><b>AI-first thinking</b><span>Every product can be made smarter, from chatbots to workflow automation.</span></p></div>
+  <div class="glass"><i></i><p style="margin:0"><b>Predictable delivery</b><span>Clear timelines, milestone-based payments and one point of contact.</span></p></div>
+  <div class="glass"><i></i><p style="margin:0"><b>Secure and scalable</b><span>Cloud-ready architecture with security reviews built in.</span></p></div>
+  <div class="glass"><i></i><p style="margin:0"><b>You own everything</b><span>Source code, designs and data are yours after final payment.</span></p></div>
+ </div></div>
+</section>
+
+<section id="services" class="veil">
+ <h2>Everything your business needs to build and grow digitally.</h2>
+ <p class="lead">Strategy, engineering and ongoing support from one accountable team.</p>
+ <div class="grid" id="svcgrid"></div>
+</section>
+
+<section id="pricing" class="veil">
+ <h2>Transparent pricing for every business size.</h2>
+ <p class="lead">Choose Basic for start-ups and small businesses, Standard for growing companies, or Premium for large enterprises. Prices shown are founding-client prices for our first 25 clients.</p>
+ <div class="tabs" role="tablist" id="tabs"></div>
+ <div class="tiers" id="tiers"></div>
+ <div class="extras" id="extras"></div>
+ <h3 style="margin-top:44px;font-size:24px">Ready-made bundles</h3>
+ <div class="bund">
+  <div class="glass"><span class="badge">Small business</span><b>₹35,999</b><p style="margin:0;color:var(--mute);font-size:14.5px">Basic website, brand identity kit and 3 months of Basic Care. Separately ₹39,995.</p></div>
+  <div class="glass" style="border:2px solid var(--gold2)"><span class="badge" style="background:var(--dk);color:var(--gold1)">Growing business</span><b>₹1,25,999</b><p style="margin:0;color:var(--mute);font-size:14.5px">Standard website, AI chatbot and 6 months of Growth Care. Separately ₹1,39,992.</p></div>
+  <div class="glass"><span class="badge">Enterprise</span><b>Custom quote</b><p style="margin:0;color:var(--mute);font-size:14.5px">Web platform, mobile app, AI assistant and automation with a dedicated manager and SLA. Typically ₹10 lakh and above.</p></div>
+ </div>
+ <p class="note">All prices are in INR and exclude 18% GST. Founding prices are valid for the first 25 clients until 31 March 2027. The 20% founding discount cannot be combined with other offers. Hosting, domains, paid plugins, app-store fees and AI usage are billed at actuals and estimated upfront. Final quotation follows a free consultation.</p>
+</section>
+
+<div class="band">
+ <div><h2>Founding client offer</h2><p>Save up to 20% on websites, mobile apps and custom AI for our first 25 clients, plus a free AI Opportunity Audit worth ₹4,999. Start small with a landing page at a flat ₹9,999.</p><div class="btns"><a class="btn" href="#contact">Claim your slot</a></div></div>
+ <div><div class="big">20%</div><p>off for the first 25 clients</p></div>
+</div>
+
+<section id="industries" class="veil">
+ <h2>Solutions tailored to your industry.</h2>
+ <p class="lead">Each industry starts with one of the plans above at the same price. Add modules such as apps, AI assistants or automation as you grow, at the prices shown.</p>
+ <div class="ind" id="ind"></div>
+</section>
+
+<section id="process" class="veil">
+ <h2>A simple, milestone-based process.</h2>
+ <div class="steps">
+  <div class="glass"><b>1</b><h3>Discover</h3><p>Free consultation to understand goals, budget and users.</p></div>
+  <div class="glass"><b>2</b><h3>Design</h3><p>Wireframes and mockups for your approval.</p></div>
+  <div class="glass"><b>3</b><h3>Develop</h3><p>Agile sprints with weekly progress demos.</p></div>
+  <div class="glass"><b>4</b><h3>Deploy</h3><p>Testing, secure launch and team training.</p></div>
+  <div class="glass"><b>5</b><h3>Support</h3><p>Care plans so your product keeps improving.</p></div>
+ </div>
+ <h3 style="margin-top:50px;font-size:24px">Easy to start. Zero pressure.</h3>
+ <div class="ease">
+  <div class="glass"><h3>Start small</h3><p>Begin with a ₹9,999 landing page and grow into larger packages when you are ready.</p></div>
+  <div class="glass"><h3>See it before you pay</h3><p>Projects above ₹50,000 begin with a free homepage mockup or AI demo.</p></div>
+  <div class="glass"><h3>Pay in parts</h3><p>30% advance, 40% on milestone approval and 30% on delivery. Projects above ₹1 lakh can be split into up to 4 instalments.</p></div>
+  <div class="glass"><h3>Satisfaction guarantee</h3><p>Not happy after the design milestone? Pay only for the work completed and keep every design file.</p></div>
+  <div class="glass"><h3>Referral rewards</h3><p>Referral (7% off) and case-study (3% off) rewards apply to your next project, after the founding offer.</p></div>
+  <div class="glass"><h3>Free consultation</h3><p>A 60-minute strategy session to find the smartest, most affordable route to your goal.</p></div>
+ </div>
+</section>
+
+<section id="team" class="veil">
+ <h2>Leadership.</h2>
+ <div class="team">
+  <article class="glass person tilt"><h3>Abburi Naga Sai Ram</h3><div class="role">Founder and CEO</div><p>Leads corporate vision, core backend algorithms and technology architecture.</p><p>Electrical engineering background from the Indian Institute of Technology (IIT) Hyderabad.</p></article>
+  <article class="glass person tilt"><h3>Yadava Sai Nishith</h3><div class="role">Co-Founder and COO</div><p>Directs day-to-day operations, project delivery, cross-functional scaling and business outreach.</p><p>Background in team leadership and industry coordination from JNTUH College of Engineering Hyderabad.</p></article>
+ </div>
+</section>
+
+<section id="faq" class="veil">
+ <h2>Frequently asked questions.</h2>
+ <div class="faq">
+  <details><summary>Are your prices final?</summary><p>Prices are fixed per package. After a free consultation we share a written quotation based on your features, integrations and timeline. Hosting, domains, paid plugins, app-store fees and AI usage fees are billed at actuals and always estimated upfront.</p></details>
+  <details><summary>How long does a project take?</summary><p>A landing page takes about 5 to 7 days and a business website 3 to 4 weeks. Mobile apps take 6 to 14 weeks and custom AI solutions 2 to 16 weeks, depending on the plan.</p></details>
+  <details><summary>Do we own the code and data?</summary><p>Yes. Source code, designs and data belong to you after final payment.</p></details>
+  <details><summary>What support do you provide after launch?</summary><p>Every package includes 30 days of free post-launch fixes. Monthly Care Plans (Basic, Growth and Premium) cover monitoring, security updates, backups and changes.</p></details>
+  <details><summary>Can you work with clients outside Hyderabad?</summary><p>Yes. We operate as a virtual team and work with clients anywhere through video calls, shared boards and weekly demos.</p></details>
+  <details><summary>Is my data safe with AI solutions?</summary><p>We design AI assistants with private data handling, role-based access and security reviews, and we explain clearly which third-party AI services are used.</p></details>
+ </div>
+</section>
+
+<section id="contact" class="veil">
+ <h2>Let’s build something wise.</h2>
+ <p class="lead">Tell us what you want to launch, automate or fix. The first 60-minute consultation is free.</p>
+ <div class="cwrap">
+  <div class="glass cinfo" id="cinfo"></div>
+  <form class="glass" id="cf" novalidate onsubmit="return false">
+   <div class="f"><label for="fn">Full name *</label><input id="fn" autocomplete="name" placeholder="Your name"><span class="err" id="e-fn"></span></div>
+   <div class="f"><label for="fp">Mobile / WhatsApp number *</label><div class="phr"><select id="fc" aria-label="Country code"></select><input id="fp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Mobile number"></div><span class="err" id="e-fp"></span></div>
+   <div class="f full"><label for="fe">Email address *</label><input id="fe" type="email" autocomplete="email" placeholder="you@company.com"><span class="err" id="e-fe"></span></div>
+   <div class="f"><label for="fs">Service</label><select id="fs"></select></div>
+   <div class="f"><label for="fz">Business size</label><select id="fz"><option>Start-up or small business</option><option>Growing or medium business</option><option>Large enterprise</option></select></div>
+   <div class="f full"><label for="fm">Project details *</label><textarea id="fm" placeholder="What would you like to build or improve?"></textarea><span class="err" id="e-fm"></span></div>
+   <p id="fmsg" class="full" role="status" aria-live="polite"></p>
+   <div class="opts" id="mailopts" hidden></div>
+   <button class="btn" type="button" id="bw">Send on WhatsApp</button>
+   <button class="btn out" type="button" id="be">Send by email</button>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="fin">
+ <div class="ftop"><div><b style="color:#fff;font:700 18px var(--fd)">AlgoWise Technologies</b><br>Smart Technology. Wise Growth.</div><div><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div></div>
+ <p>© 2026 AlgoWise Technologies Private Limited. All Rights Reserved.</p>
+ <p>CIN: U62099TS2024PTC188490 | Registered Office: 13-18/120 Nakshatra Society, Siddhanti, Shamshabad, Rangareddy, TG, 501218 IN.</p>
+ <p>Classified by MCA under Corporate Activity Code: Other information technology and computer service activities n.e.c. (NIC 62).</p>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var SV=[['AI','Custom AI and ML development','Tailored machine learning models, predictive analytics and workflow automations that remove operational friction.'],
+['SW','Business software consultancy','Cloud-native design, microservices, data pipelines and database engineering delivered end to end.'],
+['AU','IT system audits','Legacy code review, secure cloud migration and modern developer practices for existing systems.'],
+['WB','Website development','Landing pages, business sites, e-commerce stores and custom web platforms.'],
+['AP','Mobile app development','Android and iOS apps from one codebase, from start-up MVPs to enterprise marketplaces.'],
+['CB','AI chatbots and assistants','Website and WhatsApp bots and assistants that answer from your own documents and data.'],
+['UX','UI/UX and brand design','Research, wireframes, prototypes, design systems and brand identity kits.'],
+['SE','SEO and digital growth','Technical and on-page SEO with monthly reporting to grow organic visibility.'],
+['CL','Cloud, DevOps and QA','AWS, Azure and GCP setup, CI/CD, monitoring, and manual plus automated testing.'],
+['ER','Custom CRM and ERP','Tailored sales, HR and inventory software built around your workflow.']];
+$('svcgrid').innerHTML=SV.map(function(s){return '<article class="glass svc tilt"><div class="ic">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></article>'}).join('');
+var R='₹';
+var T={
+web:{n:'Websites',t:[['Basic','Launch Starter','Start-ups, freelancers and local businesses',['Up to 5 pages, custom responsive design','Contact form, WhatsApp chat, Google Maps','Basic SEO, hosting and domain setup help','30 days free post-launch fixes'],'24,999','19,999','7-10 days'],
+['Standard','Business Pro','Growing and medium businesses',['Up to 12 pages, premium custom design','Self-edit CMS and blog','Advanced SEO and Google Analytics','Speed and security optimisation, CRM connection'],'54,999','43,999','3-4 weeks',1],
+['Premium','Custom Web Platform','Large enterprises needing portals and dashboards',['Login, roles, admin panel and dashboards','API, ERP and CRM integrations','Scalable cloud deployment','Security review and audit trail'],'2,49,000','1,99,000','8-14 weeks','from']],
+x:[['Landing Page','One mobile-first page, contact form, WhatsApp button. Flat entry offer.','','9,999'],['E-Commerce Store','Shopify or WooCommerce, up to 100 products, payments and shipping.','89,999','71,999'],['Enterprise E-Commerce / Marketplace','Multi-vendor, custom checkout, ERP and logistics integrations.','4,99,000','from 3,99,000']]},
+app:{n:'Mobile apps',t:[['Basic','Start-up MVP App','Start-ups validating an idea',['Android and iOS from one codebase','Up to 8 screens and user login','Basic backend and database','Play Store and App Store publishing'],'1,49,000','1,19,000','6-8 weeks'],
+['Standard','Business App','Growing businesses serving customers in-app',['Custom UI/UX, cross-platform build','Backend with admin panel','Payments and push notifications','Analytics and third-party integrations'],'3,99,000','3,19,000','10-14 weeks',1],
+['Premium','Enterprise / Marketplace App','Large enterprises with multi-role, high-security needs',['Customers, vendors and admin roles','Advanced integrations and SSO','High-security architecture','Scalable cloud with monitoring'],'9,99,000','7,99,000','4-6 months','from']],
+x:[['Admin web panel','Manage users, content and orders.','','from 19,999'],['Payment gateway','Cards, UPI and wallets.','','from 7,999'],['Push notifications','Targeted messages to users.','','from 4,999'],['Chat, maps and tracking','In-app chat, calling and live tracking.','','from 12,999']]},
+ai:{n:'AI solutions',t:[['Basic','AI Chatbot Starter','Small businesses wanting 24/7 replies',['Website or WhatsApp chatbot','Trained on your FAQs and documents','Lead capture and human handoff','English and Indian languages'],'59,999','47,999','2-3 weeks'],
+['Standard','AI Assistant Pro (RAG)','Medium businesses wanting answers from their data',['LLM assistant grounded in your documents','CRM, ERP and API integrations','Analytics dashboard','Multi-language, role-based access'],'1,99,000','1,59,000','4-6 weeks',1],
+['Premium','Custom AI / ML Solution','Enterprises needing prediction, vision or custom models',['Computer vision and predictive analytics','Forecasting and recommendation engines','Document intelligence at scale','Custom model training and deployment'],'4,99,000','3,99,000','8-16 weeks','from']],
+x:[['AI Workflow Automation','Automate invoices, emails, reports and follow-ups with AI agents.','89,999','from 71,999'],['AI Opportunity Audit','60-minute session to find where AI saves you time and money.','4,999','Free']]},
+care:{n:'Care plans and add-ons',t:[['Basic','Basic Care','Small businesses',['Uptime monitoring','Security updates and backups','2 hours of changes per month','Email support'],'','3,999','per month'],
+['Standard','Growth Care','Medium businesses',['Everything in Basic','6 hours of changes per month','Monthly performance report','Priority email and chat'],'','7,999','per month',1],
+['Premium','Premium Care','Large enterprises',['Everything in Growth','15+ hours of changes per month','4-hour priority response','Custom SLA available'],'','14,999','per month','from']],
+x:[['UI/UX design (web)','Research, wireframes, clickable prototype.','19,999','15,999'],['UI/UX design (app)','Full prototype and design system.','39,999','31,999'],['Brand identity kit','Logo, colours, typography, templates.','9,999','7,999'],['SEO and digital growth','Audit, on-page and technical SEO, monthly report.','12,999 per month','10,399 per month'],['Custom CRM / ERP','Tailored sales, HR and inventory software.','1,99,000','from 1,59,000'],['Cloud and DevOps setup','AWS, Azure or GCP, CI/CD, monitoring.','29,999','from 23,999'],['QA and testing','Manual and automated, performance and security.','14,999','from 11,999']]}
+};
+var keys=Object.keys(T),cur='web';
+function px(v){return v.indexOf('from')==0||v=='Free'?v.replace('from ','From '+R).replace(/^Free$/,'Free'):R+v}
+function render(k){cur=k;
+ $('tabs').innerHTML=keys.map(function(x){return '<button role="tab" data-k="'+x+'" aria-selected="'+(x==k)+'">'+T[x].n+'</button>'}).join('');
+ $('tiers').innerHTML=T[k].t.map(function(t){var f=t[7]==='from',reco=t[7]===1;
+  return '<article class="glass tier tilt'+(reco?' reco':'')+'"><span class="badge">'+t[0]+(reco?' · Recommended':'')+'</span><h3>'+t[1]+'</h3><div class="for">'+t[2]+'</div><ul>'+t[3].map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul><div class="tm">'+(t[6].indexOf('per')==0?'Billed '+t[6]:'Delivery: '+t[6])+'</div><div class="pr">'+(t[4]?'<s>'+(f?'From ':'')+R+t[4]+'</s>':'')+'<b>'+(f?'From ':'')+R+t[5]+'</b><small>+ GST · founding price</small></div><a class="btn'+(reco?'':' out')+'" href="#contact" data-s="'+t[1]+'">Get a quote</a></article>'}).join('');
+ $('extras').innerHTML=T[k].x.map(function(e){return '<div class="glass ex"><div><b>'+e[0]+'</b><span>'+e[1]+'</span></div><em>'+(e[2]?'<s>'+R+e[2]+'</s>':'')+(e[3]=='Free'?'Free':(e[3].indexOf('from')==0?'From '+R+e[3].slice(5):R+e[3]))+'</em></div>'}).join('');
+}
+render('web');
+$('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)render(b.dataset.k)});
+var IN=[['Retail and e-commerce','Online store with payments, inventory and order tracking.','E-Commerce Store','₹71,999',[['AI shopping assistant (Chatbot Starter)','₹47,999'],['Shopping app (MVP App)','₹1,19,000']]],['Healthcare and clinics','Professional website with enquiry and appointment-request forms.','Business Pro website','₹43,999',[['Patient app (MVP App)','₹1,19,000'],['AI query bot (Chatbot Starter)','₹47,999']]],['Education and coaching','Course website with enquiry and enrolment forms.','Business Pro website','₹43,999',[['Learning app (MVP App)','₹1,19,000'],['AI doubt-solver (Assistant Pro)','₹1,59,000']]],['Real estate','Property listings website with lead capture and virtual tours.','Business Pro website','₹43,999',[['Lead CRM (Custom CRM)','From ₹1,59,000'],['AI property assistant (Chatbot Starter)','₹47,999']]],['Finance and fintech','Secure customer app with dashboards and KYC flows.','Business App','₹3,19,000',[['AI document processing (Assistant Pro)','₹1,59,000'],['Admin portal (Custom Web Platform)','From ₹1,99,000']]],['Manufacturing and logistics','Tailored ERP and CRM for orders, stock and workflow.','Custom CRM / ERP','From ₹1,59,000',[['Tracking portal (Custom Web Platform)','From ₹1,99,000'],['AI demand forecasting (Custom AI / ML)','From ₹3,99,000']]],['Hospitality and travel','Website with enquiry and booking-request forms.','Business Pro website','₹43,999',[['Guest app (MVP App)','₹1,19,000'],['AI concierge (Chatbot Starter)','₹47,999']]],['Professional services and NGOs','Brand website with enquiry or donation forms.','Launch Starter website','₹19,999',[['Workflow automation','From ₹71,999'],['Client portal (Custom Web Platform)','From ₹1,99,000']]]];
+$('ind').innerHTML=IN.map(function(i){return '<div class="glass tilt"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><b>Starter: '+i[2]+', '+i[3]+'</b><small style="display:block;color:var(--mute);font-size:13px;margin-top:10px;line-height:1.5">Add as you grow:<br>'+i[4].map(function(a){return a[0]+' – '+a[1]}).join('<br>')+'</small></div>'}).join('');
+var opts=['General consultation'];keys.forEach(function(k){if(k!='care')T[k].t.forEach(function(t){opts.push(t[1])})});opts.push('Care plan or add-on','Industry solution');
+$('fs').innerHTML=opts.map(function(o){return '<option>'+o+'</option>'}).join('');
+document.addEventListener('click',function(e){var a=e.target.closest('[data-s]');if(a){$('fs').value=a.dataset.s}});
+var CFG={phone:'+918019546967',phoneShow:'+91 80195 46967',email:'info@algowisetech.com',site:'algowisetech.com'};
+$('cinfo').innerHTML='<a href="tel:'+CFG.phone+'"><small>Call</small>'+CFG.phoneShow+'</a><a href="https://wa.me/'+CFG.phone.replace('+','')+'" target="_blank" rel="noopener"><small>WhatsApp</small>Chat with us</a><a href="mailto:'+CFG.email+'"><small>Email</small>'+CFG.email+'</a><a href="https://'+CFG.site+'" target="_blank" rel="noopener"><small>Website</small>'+CFG.site+'</a><a href="#faq"><small>Working mode</small>Virtual team, serving clients anywhere</a>';
+var CC=[['India','+91',10,10,/^[6-9]\d{9}$/],['United States','+1',10,10,/^[2-9]\d{9}$/],['Canada','+1',10,10,/^[2-9]\d{9}$/],['United Kingdom','+44',10,10,/^[1-9]\d{9}$/],['United Arab Emirates','+971',9,9,/^5\d{8}$/],['Saudi Arabia','+966',9,9,/^5\d{8}$/],['Qatar','+974',8,8,/^[3-7]\d{7}$/],['Kuwait','+965',8,8,/^[569]\d{7}$/],['Oman','+968',8,8,/^[79]\d{7}$/],['Bahrain','+973',8,8,/^[36]\d{7}$/],['Singapore','+65',8,8,/^[89]\d{7}$/],['Malaysia','+60',9,10,/^1\d{8,9}$/],['Australia','+61',9,9,/^4\d{8}$/],['New Zealand','+64',8,10,/^[2]\d{7,9}$/],['Germany','+49',10,11,/^1\d{9,10}$/],['France','+33',9,9,/^[67]\d{8}$/],['Netherlands','+31',9,9,/^6\d{8}$/],['Sri Lanka','+94',9,9,/^7\d{8}$/],['Bangladesh','+880',10,10,/^1\d{9}$/],['Nepal','+977',10,10,/^9\d{9}$/],['Pakistan','+92',10,10,/^3\d{9}$/],['Other country (enter full number)','',7,15,/^[1-9]\d{6,14}$/]];
+$('fc').innerHTML=CC.map(function(c,i){return '<option value="'+i+'">'+(c[1]?c[1]+' ':'')+c[0]+'</option>'}).join('');
+function ferr(id,t){var e=$('e-f'+id);if(e)e.textContent=t||'';var f=$('f'+id);if(f)f.setAttribute('aria-invalid',t?'true':'false')}
+function check(){var bad=[],first=null;
+ var n=$('fn').value.trim();
+ if(n.length<2||!/[A-Za-z\u00C0-\u024F\u0900-\u0DFF]{2}/.test(n)){ferr('n','Enter your full name (at least 2 letters).');bad.push('your full name')}else ferr('n','');
+ var c=CC[+$('fc').value],raw=$('fp').value.trim(),num=raw.replace(/[\s\-().]/g,''),pm='';
+ if(!raw)pm='Enter your mobile number.';
+ else if(!/^\+?\d+$/.test(num))pm='Use digits only, no letters or symbols.';
+ else{ if(c[1]){num=num.replace(/^\+/,'');if(num.indexOf(c[1].slice(1))===0&&num.length>c[3]&&c[1]!=='+1')num=num.slice(c[1].length-1);if(c[1]!=='+91'&&c[1]!=='+1')num=num.replace(/^0+/,'')}else num=num.replace(/^\+/,'').replace(/^0+/,'');
+  if(num.length<c[2]||num.length>c[3]||!c[4].test(num)){var d=c[2]==c[3]?c[2]+'-digit':c[2]+'-'+c[3]+' digit';pm=c[1]==='+91'?'Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.':c[1]?'Enter a valid '+d+' mobile number for '+c[0]+'.':'Enter the full international number with country code (7 to 15 digits).'}}
+ if(pm){ferr('p',pm);bad.push('a valid mobile number')}else ferr('p','');
+ var em=$('fe').value.trim();
+ if(!em)ferr('e','Enter your email address.');else if(!/^[^\s@.][^\s@]*@[^\s@.]+(\.[^\s@.]+)*\.[A-Za-z]{2,}$/.test(em)||/\.\./.test(em))ferr('e','Enter a valid email, for example name@company.com.');else ferr('e','');
+ if($('e-fe').textContent)bad.push('a valid email address');
+ var m=$('fm').value.trim();
+ if(m.length<10){ferr('m',m?'Please add a few more details (at least 10 characters).':'Tell us briefly what you want to build or improve.');bad.push('project details')}else ferr('m','');
+ var box=$('fmsg');
+ if(bad.length){box.className='full bad';box.textContent='Please complete: '+bad.join(', ')+'.';var ids=['fn','fp','fe','fm'];for(var k=0;k<ids.length;k++)if($(ids[k]).getAttribute('aria-invalid')==='true'){$(ids[k]).focus();break}return null}
+ box.className='full';box.textContent='';
+ var full=(c[1]||'+')+num;
+ return {text:'Hello AlgoWise Technologies,\nName: '+n+'\nMobile: '+full+'\nEmail: '+em+'\nService: '+$('fs').value+'\nBusiness size: '+$('fz').value+'\nDetails: '+m,subject:'Enquiry: '+$('fs').value+' - '+n}}
+['fn','fp','fe','fm'].forEach(function(id){$(id).addEventListener('input',function(){if($(id).getAttribute('aria-invalid')==='true'){$(id).setAttribute('aria-invalid','false');$('e-'+id).textContent=''}})});
+$('fc').addEventListener('change',function(){$('fp').setAttribute('aria-invalid','false');$('e-fp').textContent=''});
+function go(url){var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+$('bw').onclick=function(){$('mailopts').hidden=true;var d=check();if(!d)return;go('https://wa.me/'+CFG.phone.replace('+','')+'?text='+encodeURIComponent(d.text));$('fmsg').textContent='Opening WhatsApp with your message. Press Send there to finish.'};
+$('be').onclick=function(){var d=check();if(!d)return;var to=CFG.email,su=encodeURIComponent(d.subject),bo=encodeURIComponent(d.text),o=$('mailopts');
+ o.hidden=false;o.innerHTML='<p>Your details look good. Choose how you want to send the email:</p><div><a href="https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+su+'&body='+bo+'" target="_blank" rel="noopener">Open in Gmail</a><a href="https://outlook.live.com/mail/0/deeplink/compose?to='+to+'&subject='+su+'&body='+bo+'" target="_blank" rel="noopener">Open in Outlook</a><a href="mailto:'+to+'?subject='+su+'&body='+bo+'">Default mail app</a><button type="button" id="cp">Copy message</button></div>';
+ $('cp').onclick=function(){var t='To: '+to+'\nSubject: '+d.subject+'\n\n'+d.text,b=this;function ok(){b.textContent='Copied. Paste it into any email.'}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){fb()})}else fb();function fb(){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');ok()}catch(e){b.textContent='Copy failed. Email '+to}x.remove()}};
+ o.scrollIntoView({block:'nearest',behavior:'smooth'})};
+var btn=document.querySelector('.menu'),nav=$('nav');
+btn.onclick=function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)};
+nav.onclick=function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}};
+document.addEventListener('pointermove',function(e){var el=e.target.closest&&e.target.closest('.tilt');if(!el)return;var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(900px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateZ(6px)'});
+document.addEventListener('pointerout',function(e){var el=e.target.closest&&e.target.closest('.tilt');if(el)el.style.transform=''});
+if(typeof THREE==='undefined')return;
+var cv=$('gl'),ren;try{ren=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true})}catch(e){return}
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ren.setPixelRatio(Math.min(devicePixelRatio,2));
+var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=7;
+sc.add(new THREE.HemisphereLight(0xfff4d6,0x8a6a1a,.9));
+var l1=new THREE.PointLight(0xffffff,1.6,40);l1.position.set(5,5,7);sc.add(l1);
+var l2=new THREE.PointLight(0xffd36a,1.2,40);l2.position.set(-6,-3,5);sc.add(l2);
+var knot=new THREE.Mesh(new THREE.TorusKnotGeometry(1.15,.36,220,28,2,3),new THREE.MeshStandardMaterial({color:0xf0c445,metalness:.45,roughness:.22,emissive:0x4a3500,emissiveIntensity:.35}));
+var cage=new THREE.Mesh(new THREE.IcosahedronGeometry(2.15,1),new THREE.MeshBasicMaterial({color:0xb88b14,wireframe:true,transparent:true,opacity:.28}));
+var g=new THREE.Group();g.add(knot);g.add(cage);sc.add(g);
+var n=700,pos=new Float32Array(n*3);for(var i=0;i<n*3;i++)pos[i]=(Math.random()-.5)*26;
+var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+var pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xb88b14,size:.04,transparent:true,opacity:.55}));sc.add(pts);
+var mx=0,my=0,p=0,tp=0;
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function size(){ren.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}
+addEventListener('resize',size);size();
+function sc2(){var m=document.documentElement.scrollHeight-innerHeight;tp=m>0?scrollY/m:0}
+addEventListener('scroll',sc2,{passive:true});sc2();
+var t0=performance.now();
+function loop(){requestAnimationFrame(loop);var t=reduce?0:(performance.now()-t0)/1000;p+=(tp-p)*.06;
+ var wide=innerWidth>900,hero=Math.max(0,1-p*7);
+ g.position.x=wide?2.4*(.35+.65*hero)*Math.cos(p*Math.PI*3):0;
+ g.position.y=(wide?0:1.7*hero)+Math.sin(t*.8)*.12;
+ g.scale.setScalar((wide?1:.72)*(.6+.4*hero));
+ g.rotation.y=t*.35+p*10+mx*.8;g.rotation.x=t*.2+p*4+my*.6;
+ cage.rotation.y=-t*.15;pts.rotation.y=t*.02+p*1.2;pts.rotation.x=p*.6;
+ cv.style.opacity=.16+.84*hero;ren.render(sc,cam)}
+loop();
+})();
+</script>
+</body></html>
