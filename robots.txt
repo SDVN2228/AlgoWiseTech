@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block search engines from indexing any future draft or admin folders
+Disallow: /admin/
+
+# Point search crawlers directly to your sitemap
+Sitemap: https://algowisetech.com
