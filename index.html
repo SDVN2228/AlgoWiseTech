@@ -3,6 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AlgoWise Technologies | AI, Software and Digital Solutions</title>
 <meta name="description" content="AlgoWise Technologies is a Hyderabad-based software company delivering custom AI, machine learning, web and mobile solutions with transparent fixed pricing. Incubated at JNTUH TBI.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%221%22%20x2=%221%22%20y2=%220%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23b8860b%22/%3E%3Cstop%20offset=%22.55%22%20stop-color=%22%23e0b83a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23f6dc7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2214%22%20fill=%22%231a1a1f%22/%3E%3Cpath%20transform=%22translate%2810.00%2019.17%29%20scale%280.0777%29%22%20fill=%22url%28%23g%29%22%20d=%22M181%20209%20L193%20238%20L205%20248%20L204%20235%20L196%20229%20L197%20222%20L193%20219%20L191%20207ZM168%20201%20L148%20203%20L117%20264%20L195%20263ZM307%20183%20L287%20230%20L320%20299%20L341%20262%20L343%20252%20L311%20184%20L312%20192ZM353%20115%20L323%20162%20L333%20186%20L330%20187%20L324%20175%20L315%20181%20L315%20186%20L341%20238%20L350%20230%20L343%20214%20L346%20213%20L402%20327%20L424%20289%20L429%20267%20L367%20136ZM115%2095%20L1%20325%20L52%20328%20L56%20324%20L141%20157%20L139%20139ZM158%209%20L131%2063%20L131%2069%20L254%20327%20L304%20327%20L300%20311%20L168%2023ZM565%205%20L510%205%20L418%20189%20L443%20245%20L452%20237%20L549%2039%20L560%2023Z%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1a1a1f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -94,7 +96,16 @@ form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 label{font-weight:700;font-size:13.5px;display:grid;gap:6px}
 input,select,textarea{font:400 16px var(--fb);padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fdfcf9;color:var(--ink);width:100%}
 .full{grid-column:1/-1}textarea{min-height:110px;resize:vertical}
-#fmsg{grid-column:1/-1;color:var(--goldt);font-size:14px;min-height:20px;margin:0}
+#fmsg{grid-column:1/-1;font-size:14px;min-height:20px;margin:0;color:var(--goldt)}
+#fmsg.bad{color:#b3261e;background:#fdecea;border:1px solid #f3c1bc;border-radius:12px;padding:12px 16px}
+.f{display:grid;gap:6px;align-content:start}.f.full{grid-column:1/-1}
+.phr{display:grid;grid-template-columns:minmax(120px,.9fr) 2fr;gap:8px}
+.err{color:#b3261e;font-size:12.5px;font-weight:500;min-height:0}
+[aria-invalid=true]{border-color:#d4483f!important;background:#fff8f7!important}
+.opts{grid-column:1/-1;border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fdfcf9}
+.opts p{margin:0 0 10px;font-weight:700;font-size:14px}.opts div{display:flex;flex-wrap:wrap;gap:10px}
+.opts a,.opts button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font:700 13.5px var(--fb);text-decoration:none;cursor:pointer}
+.opts a:hover,.opts button:hover{border-color:var(--gold2);color:var(--goldt)}
 footer{position:relative;z-index:1;margin-top:90px;background:var(--dk);color:#bdb8a6;padding:44px 20px calc(34px + env(safe-area-inset-bottom,0px));font-size:13px;line-height:1.8}
 .fin{max-width:1160px;margin:0 auto}.ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #34343b}
 footer a{color:var(--gold1);text-decoration:none;margin-right:18px}footer p{margin:0 0 6px;max-width:none}
@@ -181,7 +192,7 @@ footer a{color:var(--gold1);text-decoration:none;margin-right:18px}footer p{marg
 
 <section id="industries" class="veil">
  <h2>Solutions tailored to your industry.</h2>
- <p class="lead">Starter packs built from our Basic, Standard and Premium plans and adapted to how your sector works.</p>
+ <p class="lead">Each industry starts with one of the plans above at the same price. Add modules such as apps, AI assistants or automation as you grow, at the prices shown.</p>
  <div class="ind" id="ind"></div>
 </section>
 
@@ -229,21 +240,16 @@ footer a{color:var(--gold1);text-decoration:none;margin-right:18px}footer p{marg
  <h2>Let’s build something wise.</h2>
  <p class="lead">Tell us what you want to launch, automate or fix. The first 60-minute consultation is free.</p>
  <div class="cwrap">
-  <div class="glass cinfo">
-   <a href="tel:+918019546967"><small>Call</small>+91 80195 46967</a>
-   <a href="https://wa.me/918019546967"><small>WhatsApp</small>Chat with us</a>
-   <a href="mailto:info@algowisetech.com"><small>Email</small>info@algowisetech.com</a>
-   <a href="https://algowisetech.com"><small>Website</small>algowisetech.com</a>
-   <a href="#faq"><small>Working mode</small>Virtual team, serving clients anywhere</a>
-  </div>
-  <form class="glass" id="cf" onsubmit="return false">
-   <label>Full name<input id="fn" autocomplete="name" placeholder="Your name"></label>
-   <label>Phone<input id="fp" type="tel" autocomplete="tel" placeholder="+91"></label>
-   <label class="full">Email<input id="fe" type="email" autocomplete="email" placeholder="you@company.com"></label>
-   <label>Service<select id="fs"></select></label>
-   <label>Business size<select id="fz"><option>Start-up or small business</option><option>Growing or medium business</option><option>Large enterprise</option></select></label>
-   <label class="full">Project details<textarea id="fm" placeholder="What would you like to build or improve?"></textarea></label>
-   <p id="fmsg" class="full" role="status"></p>
+  <div class="glass cinfo" id="cinfo"></div>
+  <form class="glass" id="cf" novalidate onsubmit="return false">
+   <div class="f"><label for="fn">Full name *</label><input id="fn" autocomplete="name" placeholder="Your name"><span class="err" id="e-fn"></span></div>
+   <div class="f"><label for="fp">Mobile / WhatsApp number *</label><div class="phr"><select id="fc" aria-label="Country code"></select><input id="fp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Mobile number"></div><span class="err" id="e-fp"></span></div>
+   <div class="f full"><label for="fe">Email address *</label><input id="fe" type="email" autocomplete="email" placeholder="you@company.com"><span class="err" id="e-fe"></span></div>
+   <div class="f"><label for="fs">Service</label><select id="fs"></select></div>
+   <div class="f"><label for="fz">Business size</label><select id="fz"><option>Start-up or small business</option><option>Growing or medium business</option><option>Large enterprise</option></select></div>
+   <div class="f full"><label for="fm">Project details *</label><textarea id="fm" placeholder="What would you like to build or improve?"></textarea><span class="err" id="e-fm"></span></div>
+   <p id="fmsg" class="full" role="status" aria-live="polite"></p>
+   <div class="opts" id="mailopts" hidden></div>
    <button class="btn" type="button" id="bw">Send on WhatsApp</button>
    <button class="btn out" type="button" id="be">Send by email</button>
   </form>
@@ -301,15 +307,43 @@ function render(k){cur=k;
 }
 render('web');
 $('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)render(b.dataset.k)});
-var IN=[['Retail and e-commerce','Online store, inventory sync, order tracking, AI shopping assistant.','71,999'],['Healthcare and clinics','Appointment booking, patient app, WhatsApp reminders, AI query bot.','43,999'],['Education and coaching','Course website, learning portal, student app, AI doubt-solver.','1,19,000'],['Real estate','Listings portal, lead CRM, virtual tours, AI property assistant.','43,999'],['Finance and fintech','Secure customer app, dashboards, AI document processing and KYC flows.','3,19,000'],['Manufacturing and logistics','ERP and CRM, order and fleet tracking, AI demand forecasting.','1,59,000'],['Hospitality and travel','Booking engine, guest app, AI concierge, review management.','43,999'],['Professional services and NGOs','Brand website, client portal, donation or enquiry flows, automation.','19,999']];
-$('ind').innerHTML=IN.map(function(i){return '<div class="glass tilt"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><b>Starter pack from '+R+i[2]+'</b></div>'}).join('');
+var IN=[['Retail and e-commerce','Online store with payments, inventory and order tracking.','E-Commerce Store','₹71,999',[['AI shopping assistant (Chatbot Starter)','₹47,999'],['Shopping app (MVP App)','₹1,19,000']]],['Healthcare and clinics','Professional website with enquiry and appointment-request forms.','Business Pro website','₹43,999',[['Patient app (MVP App)','₹1,19,000'],['AI query bot (Chatbot Starter)','₹47,999']]],['Education and coaching','Course website with enquiry and enrolment forms.','Business Pro website','₹43,999',[['Learning app (MVP App)','₹1,19,000'],['AI doubt-solver (Assistant Pro)','₹1,59,000']]],['Real estate','Property listings website with lead capture and virtual tours.','Business Pro website','₹43,999',[['Lead CRM (Custom CRM)','From ₹1,59,000'],['AI property assistant (Chatbot Starter)','₹47,999']]],['Finance and fintech','Secure customer app with dashboards and KYC flows.','Business App','₹3,19,000',[['AI document processing (Assistant Pro)','₹1,59,000'],['Admin portal (Custom Web Platform)','From ₹1,99,000']]],['Manufacturing and logistics','Tailored ERP and CRM for orders, stock and workflow.','Custom CRM / ERP','From ₹1,59,000',[['Tracking portal (Custom Web Platform)','From ₹1,99,000'],['AI demand forecasting (Custom AI / ML)','From ₹3,99,000']]],['Hospitality and travel','Website with enquiry and booking-request forms.','Business Pro website','₹43,999',[['Guest app (MVP App)','₹1,19,000'],['AI concierge (Chatbot Starter)','₹47,999']]],['Professional services and NGOs','Brand website with enquiry or donation forms.','Launch Starter website','₹19,999',[['Workflow automation','From ₹71,999'],['Client portal (Custom Web Platform)','From ₹1,99,000']]]];
+$('ind').innerHTML=IN.map(function(i){return '<div class="glass tilt"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><b>Starter: '+i[2]+', '+i[3]+'</b><small style="display:block;color:var(--mute);font-size:13px;margin-top:10px;line-height:1.5">Add as you grow:<br>'+i[4].map(function(a){return a[0]+' – '+a[1]}).join('<br>')+'</small></div>'}).join('');
 var opts=['General consultation'];keys.forEach(function(k){if(k!='care')T[k].t.forEach(function(t){opts.push(t[1])})});opts.push('Care plan or add-on','Industry solution');
 $('fs').innerHTML=opts.map(function(o){return '<option>'+o+'</option>'}).join('');
 document.addEventListener('click',function(e){var a=e.target.closest('[data-s]');if(a){$('fs').value=a.dataset.s}});
-function msg(){var n=$('fn').value.trim(),m=$('fm').value.trim();if(!n||!m){$('fmsg').textContent='Please add your name and project details first.';return null}
- $('fmsg').textContent='';return 'Hello AlgoWise Technologies,\nName: '+n+'\nPhone: '+$('fp').value+'\nEmail: '+$('fe').value+'\nService: '+$('fs').value+'\nBusiness size: '+$('fz').value+'\nDetails: '+m}
-$('bw').onclick=function(){var t=msg();if(t)window.open('https://wa.me/918019546967?text='+encodeURIComponent(t),'_blank')};
-$('be').onclick=function(){var t=msg();if(t)location.href='mailto:algowisetech1@gmail.com?subject='+encodeURIComponent('Enquiry: '+$('fs').value)+'&body='+encodeURIComponent(t)};
+var CFG={phone:'+918019546967',phoneShow:'+91 80195 46967',email:'algowisetech1@gmail.com',site:'algowisetech.vercel.app'};
+$('cinfo').innerHTML='<a href="tel:'+CFG.phone+'"><small>Call</small>'+CFG.phoneShow+'</a><a href="https://wa.me/'+CFG.phone.replace('+','')+'" target="_blank" rel="noopener"><small>WhatsApp</small>Chat with us</a><a href="mailto:'+CFG.email+'"><small>Email</small>'+CFG.email+'</a><a href="https://'+CFG.site+'" target="_blank" rel="noopener"><small>Website</small>'+CFG.site+'</a><a href="#faq"><small>Working mode</small>Virtual team, serving clients anywhere</a>';
+var CC=[['India','+91',10,10,/^[6-9]\d{9}$/],['United States','+1',10,10,/^[2-9]\d{9}$/],['Canada','+1',10,10,/^[2-9]\d{9}$/],['United Kingdom','+44',10,10,/^[1-9]\d{9}$/],['United Arab Emirates','+971',9,9,/^5\d{8}$/],['Saudi Arabia','+966',9,9,/^5\d{8}$/],['Qatar','+974',8,8,/^[3-7]\d{7}$/],['Kuwait','+965',8,8,/^[569]\d{7}$/],['Oman','+968',8,8,/^[79]\d{7}$/],['Bahrain','+973',8,8,/^[36]\d{7}$/],['Singapore','+65',8,8,/^[89]\d{7}$/],['Malaysia','+60',9,10,/^1\d{8,9}$/],['Australia','+61',9,9,/^4\d{8}$/],['New Zealand','+64',8,10,/^[2]\d{7,9}$/],['Germany','+49',10,11,/^1\d{9,10}$/],['France','+33',9,9,/^[67]\d{8}$/],['Netherlands','+31',9,9,/^6\d{8}$/],['Sri Lanka','+94',9,9,/^7\d{8}$/],['Bangladesh','+880',10,10,/^1\d{9}$/],['Nepal','+977',10,10,/^9\d{9}$/],['Pakistan','+92',10,10,/^3\d{9}$/],['Other country (enter full number)','',7,15,/^[1-9]\d{6,14}$/]];
+$('fc').innerHTML=CC.map(function(c,i){return '<option value="'+i+'">'+(c[1]?c[1]+' ':'')+c[0]+'</option>'}).join('');
+function ferr(id,t){var e=$('e-f'+id);if(e)e.textContent=t||'';var f=$('f'+id);if(f)f.setAttribute('aria-invalid',t?'true':'false')}
+function check(){var bad=[],first=null;
+ var n=$('fn').value.trim();
+ if(n.length<2||!/[A-Za-z\u00C0-\u024F\u0900-\u0DFF]{2}/.test(n)){ferr('n','Enter your full name (at least 2 letters).');bad.push('your full name')}else ferr('n','');
+ var c=CC[+$('fc').value],raw=$('fp').value.trim(),num=raw.replace(/[\s\-().]/g,''),pm='';
+ if(!raw)pm='Enter your mobile number.';
+ else if(!/^\+?\d+$/.test(num))pm='Use digits only, no letters or symbols.';
+ else{ if(c[1]){num=num.replace(/^\+/,'');if(num.indexOf(c[1].slice(1))===0&&num.length>c[3]&&c[1]!=='+1')num=num.slice(c[1].length-1);if(c[1]!=='+91'&&c[1]!=='+1')num=num.replace(/^0+/,'')}else num=num.replace(/^\+/,'').replace(/^0+/,'');
+  if(num.length<c[2]||num.length>c[3]||!c[4].test(num)){var d=c[2]==c[3]?c[2]+'-digit':c[2]+'-'+c[3]+' digit';pm=c[1]==='+91'?'Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.':c[1]?'Enter a valid '+d+' mobile number for '+c[0]+'.':'Enter the full international number with country code (7 to 15 digits).'}}
+ if(pm){ferr('p',pm);bad.push('a valid mobile number')}else ferr('p','');
+ var em=$('fe').value.trim();
+ if(!em)ferr('e','Enter your email address.');else if(!/^[^\s@.][^\s@]*@[^\s@.]+(\.[^\s@.]+)*\.[A-Za-z]{2,}$/.test(em)||/\.\./.test(em))ferr('e','Enter a valid email, for example name@company.com.');else ferr('e','');
+ if($('e-fe').textContent)bad.push('a valid email address');
+ var m=$('fm').value.trim();
+ if(m.length<10){ferr('m',m?'Please add a few more details (at least 10 characters).':'Tell us briefly what you want to build or improve.');bad.push('project details')}else ferr('m','');
+ var box=$('fmsg');
+ if(bad.length){box.className='full bad';box.textContent='Please complete: '+bad.join(', ')+'.';var ids=['fn','fp','fe','fm'];for(var k=0;k<ids.length;k++)if($(ids[k]).getAttribute('aria-invalid')==='true'){$(ids[k]).focus();break}return null}
+ box.className='full';box.textContent='';
+ var full=(c[1]||'+')+num;
+ return {text:'Hello AlgoWise Technologies,\nName: '+n+'\nMobile: '+full+'\nEmail: '+em+'\nService: '+$('fs').value+'\nBusiness size: '+$('fz').value+'\nDetails: '+m,subject:'Enquiry: '+$('fs').value+' - '+n}}
+['fn','fp','fe','fm'].forEach(function(id){$(id).addEventListener('input',function(){if($(id).getAttribute('aria-invalid')==='true'){$(id).setAttribute('aria-invalid','false');$('e-'+id).textContent=''}})});
+$('fc').addEventListener('change',function(){$('fp').setAttribute('aria-invalid','false');$('e-fp').textContent=''});
+function go(url){var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+$('bw').onclick=function(){$('mailopts').hidden=true;var d=check();if(!d)return;go('https://wa.me/'+CFG.phone.replace('+','')+'?text='+encodeURIComponent(d.text));$('fmsg').textContent='Opening WhatsApp with your message. Press Send there to finish.'};
+$('be').onclick=function(){var d=check();if(!d)return;var to=CFG.email,su=encodeURIComponent(d.subject),bo=encodeURIComponent(d.text),o=$('mailopts');
+ o.hidden=false;o.innerHTML='<p>Your details look good. Choose how you want to send the email:</p><div><a href="https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+su+'&body='+bo+'" target="_blank" rel="noopener">Open in Gmail</a><a href="https://outlook.live.com/mail/0/deeplink/compose?to='+to+'&subject='+su+'&body='+bo+'" target="_blank" rel="noopener">Open in Outlook</a><a href="mailto:'+to+'?subject='+su+'&body='+bo+'">Default mail app</a><button type="button" id="cp">Copy message</button></div>';
+ $('cp').onclick=function(){var t='To: '+to+'\nSubject: '+d.subject+'\n\n'+d.text,b=this;function ok(){b.textContent='Copied. Paste it into any email.'}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){fb()})}else fb();function fb(){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');ok()}catch(e){b.textContent='Copy failed. Email '+to}x.remove()}};
+ o.scrollIntoView({block:'nearest',behavior:'smooth'})};
 var btn=document.querySelector('.menu'),nav=$('nav');
 btn.onclick=function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)};
 nav.onclick=function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}};
